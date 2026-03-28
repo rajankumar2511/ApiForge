@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode local settings
+.vscode/
+
+# Build output
+dist/
+out/
+
+# Generated API output (IMPORTANT)
+output/
+
+# VSCE package files
+*.vsix
+
+# Environment files
+.env
+.env.local
+
+# Coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# Windows
+ehthumbs.db
+Desktop.ini

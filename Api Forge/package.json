@@ -1,0 +1,107 @@
+{
+  "name": "api-forge",
+  "displayName": "APIForge",
+  "description": "Automatically generate frontend API code from backend routes with smart naming, nested routing support, and live updates.",
+  "version": "0.1.0",
+  "publisher": "Rajan Kumar",
+
+  "icon": "images/logo.png",
+
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+
+  "categories": [
+    "Other"
+  ],
+
+  "activationEvents": [
+    "onCommand:smart-api-connector.generateApi",
+    "onStartupFinished"
+  ],
+
+  "main": "./src/extension.js",
+
+  "contributes": {
+    "commands": [
+      {
+        "command": "smart-api-connector.generateApi",
+        "title": "APIForge: Generate API",
+        "icon": {
+          "light": "resources/light/play.svg",
+          "dark": "resources/dark/play.svg"
+        }
+      }
+    ],
+
+    "menus": {
+      "editor/title": [
+        {
+          "command": "smart-api-connector.generateApi",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "smart-api-connector.generateApi",
+          "group": "navigation"
+        }
+      ]
+    },
+
+    "configuration": {
+      "title": "APIForge",
+      "properties": {
+        "smartApiConnector.autoGenerate": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically regenerate API when backend files change"
+        },
+        "smartApiConnector.splitFiles": {
+          "type": "boolean",
+          "default": false,
+          "description": "Generate separate API files per module"
+        },
+        "smartApiConnector.cleanOutput": {
+          "type": "boolean",
+          "default": true,
+          "description": "Delete old generated APIs before regenerating"
+        },
+        "smartApiConnector.outputDir": {
+          "type": "string",
+          "default": "output",
+          "description": "Folder where generated API files will be created"
+        }
+      }
+    }
+  },
+
+  "scripts": {
+    "lint": "eslint .",
+    "test": "vscode-test",
+    "package": "vsce package"
+  },
+
+  "devDependencies": {
+    "@types/vscode": "^1.110.0",
+    "@types/node": "22.x",
+    "@types/mocha": "^10.0.10",
+    "eslint": "^9.36.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  },
+
+  "keywords": [
+    "api",
+    "generator",
+    "express",
+    "automation",
+    "codegen",
+    "axios",
+    "backend",
+    "frontend"
+  ],
+
+  "license": "MIT"
+}
